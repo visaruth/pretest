@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
         <script src="<?php echo $assets_folder;?>/js/jquery-3.1.1.min.js"></script>
         <link rel="stylesheet" href="<?php echo $assets_folder;?>/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="<?php echo $assets_folder;?>/css/bootstrap-theme.min.css" />
+        <script src="<?php echo $assets_folder;?>/js/bootstrap.min.js"></script>
         <script src="<?php echo $assets_folder;?>/sweetalert.min.js"></script>
         <link rel="stylesheet" href="<?php echo $assets_folder;?>/sweetalert.css" />
         <script src="<?php echo $logo;?>"></script>
@@ -30,7 +30,7 @@
   #textBandner{
     color:#eb8948;
     display: inline;
-    font-size: 20px;
+    font-size: 22px;
   }
   #logo{
     width:45px;

@@ -38,11 +38,11 @@ $rootURL = 'http://localhost';
 			'link' => $studentURL.'/profile.php',
 			'status' => 'not-active'
 		),
-		array(
+		/*array(
 			'icon' => 'glyphicon glyphicon',
 			'name' => '<span class="label label-danger">ออกจากระบบ</a></span>',
 			'link' => $studentURL.'/logout.php'
-		),
+		),*/
 	);
 
 	foreach($menuLists as $m)
