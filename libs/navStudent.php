@@ -23,8 +23,25 @@
                         </li>
                     <?php } ?>
                 </ul>
-                <button type="button"class="btn btn-danger navbar-btn"><span class="glyphicon glyphicon-log-out"></span> ออกจากระบบ</button>
+                <button type="button" class="btn btn-danger navbar-btn" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span> ออกจากระบบ</button>
             </div>
         </div>
     </div>
 </nav>
+<script>
+  function logout(){
+    swal({
+      title: "คำเตือน",
+      text: "คุณต้องการออกจากระบบใช่หรือไม่?",
+      type: "warning",
+      showCancelButton: true,
+      cancelButtonText: "ไม่",
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "ใช่",
+      closeOnConfirm: false
+    },
+    function(){
+      window.location = 'login.php';
+    });
+  }
+</script>

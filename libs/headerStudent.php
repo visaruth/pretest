@@ -19,9 +19,14 @@
                   <div class="col-xs-12">
                       <img id="logo" src="<?php echo $logo;?>">
                       <h2 id="textBandner" style="color:#eb8948; display: inline; ">ANNOP PRETEST</h2>
-                        <button type="button" class="navbar-toggle" style="background: white; padding: 2px 6px 5px 6px; " data-toggle="collapse" data-target="#myNavbar">
-                            <span>เมนู</span> <span class="glyphicon glyphicon-menu-down"></span>
-                        </button>
+                      <?php
+                        if($activeURL != $studentURL.'/login.php'){
+                          echo '<button type="button" class="navbar-toggle" style="background: white; padding: 2px 6px 5px 6px; " data-toggle="collapse" data-target="#myNavbar">
+                              <span>เมนู</span> <span class="glyphicon glyphicon-menu-down"></span>
+                          </button>';
+                        }
+                      ?>
+
                     </div>
                 </div>
             </div>

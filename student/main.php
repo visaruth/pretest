@@ -1,21 +1,48 @@
 <?php require '../libs/precheck.php'; ?>
 <?php require '../config.php'; ?>
-<?php $titleName = 'เข้าสู่ระบบ | Annop Pretest';?>
 <?php require $headerStudentFile; ?>
 <?php require '../libs/navStudent.php'; ?>
 
-<?php
-$cookie_name = 'aj-annop-user';
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie named '" . $cookie_name . "' is not set!";
-} else {
-    echo "Cookie '" . $cookie_name . "' is set!<br>";
-    echo "Value is: " . $_COOKIE[$cookie_name];
-}
-?>
+
 <style>
   body{
-    background-color: #E0E0E0;
+    background-color: #E7E7E7;
+  }
+  #news{
+    background-color: white;
+
+  }
+  @media screen and (orientation: portrait) {
+    #rownews{
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+  @media screen and (orientation: landscape) {
+    #rownews{
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
 </style>
+<div class="row" id="rownews" >
+  <div class="col-xs-12" id="news">
+      <p>
+        <h1>
+          ประกาศ 1
+        </h1>
+      </p>
+  </div>
+  <div class="col-xs-12" style="height:30px">
+
+  </div>
+  <div class="col-xs-12" id="news">
+      <p>
+        <h1>
+          ประกาศ 2
+        </h1>
+      </p>
+  </div>
+</div>
+
 <?php require $footerStudentFile; ?>
