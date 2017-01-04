@@ -4,7 +4,6 @@
         <link rel="shortcut icon" href="<?php echo $logo;?>" />
          <title><?php echo $titleName; ?></title>
         <meta name="description" content="Annop Pretest">
-        <meta name="author" content="Theeranon, MarketingUnlock">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
         <script src="<?php echo $assets_folder;?>/js/jquery-3.1.1.min.js"></script>
         <link rel="stylesheet" href="<?php echo $assets_folder;?>/css/bootstrap.min.css" />
@@ -15,9 +14,40 @@
       </head>
       <body>
           <main id="main-container">
-            <div class="row text-center" style="background:#ffe4a1;">
-                <div class="col-xs-12">
-                    <img src="<?php echo $logo;; ?>" style="width:80px; padding: 5px">
-                    <h2 style="color:#eb8948; display: inline; ">ANNOP PRETEST</h2>
+            <div>
+              <div class="row text-center" style="background:#ffe4a1;">
+                  <div class="col-xs-12">
+                      <img id="logo" src="<?php echo $logo;?>">
+                      <h2 id="textBandner" style="color:#eb8948; display: inline; ">ANNOP PRETEST</h2>
+                        <button type="button" class="navbar-toggle" style="background: white; padding: 2px 6px 5px 6px; " data-toggle="collapse" data-target="#myNavbar">
+                            <span>เมนู</span> <span class="glyphicon glyphicon-menu-down"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
+<style>
+@media screen and (orientation: portrait) {
+  #textBandner{
+    color:#eb8948;
+    display: inline;
+    font-size: 20px;
+  }
+  #logo{
+    width:45px;
+    padding: 5px
+  }
+}
+@media screen and (orientation: landscape) {
+  #space{
+    height: 100px;
+  }
+  #textBandner{
+    color:#eb8948;
+    display: inline;
+  }
+  #logo{
+    width:80px;
+    padding: 5px
+  }
+}
+</style>

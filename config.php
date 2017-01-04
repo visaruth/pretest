@@ -10,6 +10,48 @@ $rootURL = 'http://localhost';
 	$navStudentFile = $root.'/libs/navStudent.php';
 	$footerStudentFile = $root.'/libs/footerStudent.php';
 	$logo = $assets_folder.'/img/logo.png';
+	$activeURL = explode('?', $rootURL.$_SERVER['REQUEST_URI'])[0];
+	$menuLists = array(
+		array(
+			'icon' => 'glyphicon glyphicon-home',
+			'name' => 'หน้าหลัก',
+			'link' => $studentURL.'/main.php'
+		),
+		array(
+			'icon' => 'glyphicon glyphicon-file',
+			'name' => 'ลงทะเบียนสอบ',
+			'link' => $studentURL.'/examinationLists.php'
+		),
+		array(
+			'icon' => 'glyphicon glyphicon-edit',
+			'name' => 'เข้าสู่การสอบ',
+			'link' => $studentURL.'/enterexam.php'
+		),
+		array(
+			'icon' => 'glyphicon glyphicon-list-alt',
+			'name' => 'ตรวจสอบคะแนน',
+			'link' => $studentURL.'/score.php',
+		),
+		array(
+			'icon' => 'glyphicon glyphicon-cog',
+			'name' => 'แก้ไขข้อมูลส่วนตัว',
+			'link' => $studentURL.'/profile.php',
+			'status' => 'not-active'
+		),
+		array(
+			'icon' => 'glyphicon glyphicon',
+			'name' => '<span class="label label-danger">ออกจากระบบ</a></span>',
+			'link' => $studentURL.'/logout.php'
+		),
+	);
+
+	foreach($menuLists as $m)
+	{
+		if ($m['link'] == $activeURL)
+		{
+			$titleName = $m['name'] . ' | Annop Pretest';
+		}
+	}
 function getDatabase()
 {
 	$hostname = 'localhost';

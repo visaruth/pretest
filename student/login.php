@@ -49,10 +49,63 @@
 }
 
 </style>
+<?php
+if(!empty($_POST))
+    {
+        //$username = $_POST['username'];
+        $password = md5($_POST['password']);
+        $citizenID = $_POST['citizenID'];
+        $db = getDatabase();
+        try
+        {
+            $db = getDatabase();
+            $sql = 'SELECT
+                        *
+                    FROM
+                        Student
+                    WHERE
+                        password = :password AND
+                        citizenID = :citizenID';
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':password', $password);
+            $stmt->bindParam(':citizenID', $citizenID);
+            $stmt->execute();
+            if($stmt->rowCount() == 1)
+            {
+              $result = $stmt->fetchAll();
+                $cookie_name = "aj-annop-user";
+                $cookie_value = $result[0]['username'];
+                setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+                $cookie_name = "aj-annop-cid";
+                $cookie_value = $result[0]['citizenID'];
+                setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+
+                echo '<script> window.location= "main.php"</script>';
+                exit();
+            }
+            else
+            {
+                echo '<script src="'.$assets_folder.'/js/plugins/sweetalert/sweetalert.min.js"></script>';
+                echo '<script>sweetAlert("ผิดพลาด", "รหัสประจำตัวประชาชน หรือ Password ไม่ถูกต้อง!", "error");</script>';
+            }
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
+    }
+    else
+    {
+        $cookie_name = "aj-annop-user";
+        setcookie($cookie_name, '', time() - (86400),"/");
+        $cookie_name = "aj-annop-cid";
+        setcookie($cookie_name, '', time() - (86400),"/");
+    }
+?>
 <div style="background-color:white">
 	<br><br>
 	<div class="container" style="">
-		<form class="form-horizontal" role="form" href="#" autocomplete="off">
+		<form class="form-horizontal" role="form" href="login" method="post" autocomplete="off">
             <center>
                 <div class="form-group">
                     <label  class="col-sm-4 control-label">รหัสประจำตัวประชาชน</label>
@@ -72,7 +125,7 @@
 				<div class="form-group">
 				<div class="col-sm-3"></div><div class="col-sm-6" style="text-align: right;"><a id="forget" href = "#" >ลืมรหัสผ่าน</a> | <a href = "#" id="reg" >สมัครสมาชิก</a></div>
 				</div>
-                <button id="loginbtn" type="button" style=" background-color: #fc4343; color:white;" class="btn" onclick="login();"> ลงชื่อเข้าใช้ </button><br><br>
+                <button id="loginbtn" type="summit" style=" background-color: #fc4343; color:white; border-radius:0px;" class="btn" > ลงชื่อเข้าใช้ </button><br><br>
 				<!--button type="button" style=" background-color: #28449b; color:white;" class="btn"> เข้าสู่ระบบด้วย Facebook </button--><br><br>
             </center>
         </form>
@@ -92,12 +145,4 @@
 
 
   </div>
-  <script>
-    function login(){
-      id = document.getElementById('citizenID').value;
-      pass = document.getElementById('password').value;
-      if()
-      swal(id+pass);
-    }
-  </script>
 <?php require $footerStudentFile; ?>
