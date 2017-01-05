@@ -25,6 +25,25 @@
   }#font2{
     color: white;
   }
+  #news{
+    background-color: white;
+
+  }
+  @media screen and (orientation: portrait) {
+    #rownews{
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+  @media screen and (orientation: landscape) {
+    #rownews{
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }.col-centered{
+    float: none;
+    margin: 0 auto;
+}
 </style>
 <div class="row" id="show">
     <div class="col-xs-4 col-md-3" id="bar">
@@ -65,5 +84,57 @@
       </h2>
     </div>
 </div>
+<div class="col-xs-12" style="height:30px">
 
+</div>
+<div class="row" id="rownews" >
+  <div class="col-md-2"></div>
+  <div class="col-xs-12 col-md-8 " id="news">
+    <div class="col-xs-12 col-md-8" >
+        <h1>
+          Pre-test ปี 2016 รอบ2   <span class="label label-danger" style="font-size: 10px;">เหลือ 5 วัน</span>
+        </h1>
+        <h5>
+          รับสมัคร: ตั้งแต่ 07-07-2016 19:00 ถึง 12-08-2016 23:59
+        </h5>
+        <h5>
+          วันสอบ: ตั้งแต่ 07-07-2016 19:00 ถึง 12-08-2016 23:59
+        </h5>
+        <h5>
+          ประกาศผล: 07-07-2016 19:00 ถึง 12-08-2016 23:59
+        </h5>
+    </div>
+    <div class="col-xs-12 col-md-4" style="padding-top:20px; padding-bottom:20px; text-align:right;">
+        <button type="button" class="btn btn-warning" ><h1>ลงทะเบียน</h1></button>
+    </div>
+  </div>
+  <div class="col-xs-12" style="height:30px">
+
+  </div>
+  </div>
+  <div class="row" id="rownews" >
+    <div class="col-md-2"></div>
+    <div class="col-xs-12 col-md-8 " id="news">
+    <div class="col-xs-12 col-md-8" >
+        <h1>
+          Pre-test ปี 2016 รอบ2
+        </h1>
+        <h5>
+          รับสมัคร: ตั้งแต่ 07-07-2016 19:00 ถึง 12-08-2016 23:59
+        </h5>
+        <h5>
+          วันสอบ: ตั้งแต่ 07-07-2016 19:00 ถึง 12-08-2016 23:59
+        </h5>
+        <h5>
+          ประกาศผล: 07-07-2016 19:00 ถึง 12-08-2016 23:59
+        </h5>
+    </div>
+    <div class="col-xs-12 col-md-4" style="padding-top:20px; padding-bottom:20px; text-align:right; ">
+        <button type="button" class="btn btn-default disabled" ><h1>ลงทะเบียน</h1><h1>เรียบร้อย</h1></button>
+    </div>
+  </div>
+  <div class="col-xs-12" style="height:30px">
+
+  </div>
+</div>
 <?php require $footerStudentFile; ?>

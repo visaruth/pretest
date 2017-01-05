@@ -13,13 +13,6 @@
 #d1, #d2{
     display:inline;
 
-}#footer {
-   position:fixed;
-   left:0px;
-   bottom:0px;
-   height:30px;
-   width:100%;
-   background:#999;
 }
 </style>
 </main>
