@@ -61,5 +61,7 @@
     width:80px;
     padding: 5px
   }
+}body{
+  background-color: #E7E7E7;
 }
 </style>

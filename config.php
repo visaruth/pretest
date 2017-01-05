@@ -25,17 +25,17 @@ $rootURL = 'http://localhost';
 		array(
 			'icon' => 'glyphicon glyphicon-edit',
 			'name' => 'เข้าสู่การสอบ',
-			'link' => $studentURL.'/enterexam.php'
+			'link' => '#'
 		),
 		array(
 			'icon' => 'glyphicon glyphicon-list-alt',
 			'name' => 'ตรวจสอบคะแนน',
-			'link' => $studentURL.'/score.php',
+			'link' => '#',
 		),
 		array(
 			'icon' => 'glyphicon glyphicon-cog',
 			'name' => 'แก้ไขข้อมูลส่วนตัว',
-			'link' => $studentURL.'/profile.php',
+			'link' => '#',
 			'status' => 'not-active'
 		),
 		/*array(
