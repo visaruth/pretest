@@ -118,7 +118,7 @@ if(!empty($_POST))
                     </div>
                 </div>
 				<div class="form-group">
-				<div class="col-sm-3"></div><div class="col-sm-6" style="text-align: right;"><a id="forget" href = "#" >ลืมรหัสผ่าน</a> | <a href = "#" id="reg" >สมัครสมาชิก</a></div>
+				<div class="col-sm-3"></div><div class="col-sm-6" style="text-align: right;"><a id="forget" href = "#" onclick="forgetpass();">ลืมรหัสผ่าน</a> | <a href = "register.php" id="reg" >สมัครสมาชิก</a></div>
 				</div>
                 <button id="loginbtn" type="summit" style=" background-color: #fc4343; color:white; border-radius:0px;" class="btn" > ลงชื่อเข้าใช้ </button><br><br>
 				<!--button type="button" style=" background-color: #28449b; color:white;" class="btn"> เข้าสู่ระบบด้วย Facebook </button--><br><br>
@@ -129,5 +129,16 @@ if(!empty($_POST))
 <div id="space">
 
 </div>
-
+<script>
+  function forgetpass(){
+    swal({
+      title: "ขออภัย",
+      text: "ส่วนนี้ยังไม่เปิดให้บริการ",
+      type: "warning",
+      confirmButtonColor: "#DD6B55",
+      confirmButtonText: "ตกลง",
+      closeOnConfirm: false
+    });
+  }
+</script>
 <?php require $footerStudentFile; ?>

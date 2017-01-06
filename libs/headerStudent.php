@@ -11,7 +11,8 @@
         <script src="<?php echo $assets_folder;?>/js/bootstrap.min.js"></script>
         <script src="<?php echo $assets_folder;?>/sweetalert.min.js"></script>
         <link rel="stylesheet" href="<?php echo $assets_folder;?>/sweetalert.css" />
-        <script src="<?php echo $logo;?>"></script>
+        <script src="<?php echo $assets_folder;?>/bootstrap-datetimepicker.min.js"></script>
+        <link rel="stylesheet" href="<?php echo $assets_folder;?>/bootstrap-datetimepicker.min.css" />
       </head>
 
         <div>

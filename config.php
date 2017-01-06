@@ -11,6 +11,7 @@ $rootURL = 'http://localhost';
 	$footerStudentFile = $root.'/libs/footerStudent.php';
 	$logo = $assets_folder.'/img/logo.png';
 	$activeURL = explode('?', $rootURL.$_SERVER['REQUEST_URI'])[0];
+	$apiFolder = $fullURL.'/api';
 	$menuLists = array(
 		array(
 			'icon' => 'glyphicon glyphicon-home',
@@ -35,7 +36,7 @@ $rootURL = 'http://localhost';
 		array(
 			'icon' => 'glyphicon glyphicon-cog',
 			'name' => 'แก้ไขข้อมูลส่วนตัว',
-			'link' => '#',
+			'link' => $studentURL.'/editProfile.php',
 			'status' => 'not-active'
 		),
 		/*array(
