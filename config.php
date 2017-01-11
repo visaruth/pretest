@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Bangkok");
 $titleName = '';
 $rootURL = 'http://localhost';
 	$fullURL = 'http://localhost/pretest';

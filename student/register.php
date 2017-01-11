@@ -10,30 +10,29 @@
                 <div class="form-group">
                     <label for="fname" class="col-sm-3 control-label">ชื่อจริง</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control normal" id="firstname" name="firstname" required />
+                        <input type="text" class="form-control normal" id="firstname" name="firstname" placeholder="ชื่อจริง (ภาษาไทย)" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="lname" class="col-sm-3 control-label">นามสกุล</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control normal" id="lastname"  required />
+                        <input type="text" class="form-control normal" id="lastname" placeholder="นามสกุล (ภาษาไทย)" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="citizenID" class="col-sm-3 control-label">รหัสประชาชน</label>
                     <div class="col-sm-9">
-                        <input type="tel" class="form-control" id="citizenID" required />
+                        <input type="number" class="form-control" id="citizenID" placeholder="ตัวเลข 13 หลักไม่มีตัวอักษรหรือสัญลักษณ์" required />
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="citizenID" class="col-sm-3 control-label">ปี คศ.-เดือน-วันเกิด</label>
                     <div class="col-sm-9">
-                        <input type='text' class="form-control normal" id="birthday" required />
+                        <input type='text' class="form-control normal" id="birthday" required placeholder="yyyy-mm-dd (ปี คศ.-เดือน-วัน เช่น 1995-12-31)"/>
                     </div>
-
                      <script type="text/javascript">
                         $(function () {
-                            $('#birthday').datepicker({
+                            $('#birthday').datetimepicker({
                                 minView: 2,
                                 format: 'yyyy-mm-dd',
                                 defaultDate: new Date(1999, 11, 05),
@@ -50,13 +49,13 @@
                 <div class="form-group">
                     <label for="school" class="col-sm-3 control-label">โรงเรียน</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control normal" id="schoolName" required />
+                        <input type="text" class="form-control normal" id="schoolName" placeholder="ชื่อโรงเรียน (ภาษาไทย)" required />
                     </div>
                 </div>
                  <div class="form-group">
                     <label for="phoneNo" class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
                     <div class="col-sm-9">
-                        <input type="tel" class="form-control normal" id="phoneNo" required />
+                        <input type="number" class="form-control normal" id="phoneNo" placeholder="(ตัวเลขเท่านั้น)" required />
                     </div>
                 </div>
                 <div class="form-group">
@@ -69,7 +68,7 @@
                 <div class="form-group">
                     <label for="username" class="col-sm-3 control-label">Username</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="username" required />
+                        <input type="text" class="form-control" id="username"  required />
                     </div>
                 </div>
                 <div class="form-group">
@@ -86,12 +85,13 @@
                 </div>
 
                 <hr />
-                <center>
-                    <div class="g-recaptcha" data-sitekey="6LdvNCQTAAAAADYndqjzMPcnK752kLCzJeUa7vlU"></div>
-                </center>
-                <hr />
+								<div class="col-xs-6 col-md-6">
+									<button type="button" class="btn btn-danger" style="width:100%" onclick="cancel()">ยกเลิก</button>
+								</div>
+								<div class="col-xs-6 col-md-6">
+									<button type="button" class="btn btn-warning" style="width:100%" id="send" onclick="submitReg()">สมัครสมาชิก</button>
+								</div>
 
-                <button type="button" class="btn btn-warning" style="width:100%" id="send" onclick="submitReg()">สมัครสมาชิก</button>
                 <br><br>
             </div>
         </form>
@@ -183,9 +183,7 @@
             }
         });
     });
-
     $('#cpassword').change(function(){
-
         var pass = $('#password').val();
         var cpass = $('#cpassword').val();
 
@@ -206,7 +204,6 @@
         }
 
     });
-
 function submitReg() {
     //$('#send').prop("disabled", true);
 
@@ -260,7 +257,7 @@ function submitReg() {
                     text: 'บันทึกข้อมูลเรียบร้อยแล้ว',
                     type: 'success',
                 }, function() {
-                    window.location='<?php echo $studentURL;?>';
+                    window.location='<?php echo $studentURL."/login.php";?>';
                 });
             }
             else
@@ -291,7 +288,21 @@ function submitReg() {
         }
     });
 }
-
+function cancel(){
+	swal({
+		title: "คำเตือน",
+		text: "คุณต้องการยกเลิกใช่หรือไม่?",
+		type: "warning",
+		showCancelButton: true,
+		cancelButtonText: "ไม่",
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "ใช่",
+		closeOnConfirm: false
+	},
+	function(){
+		window.location = 'login.php';
+	});
+}
 </script>
 
 <?php require $footerStudentFile; ?>

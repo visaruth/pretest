@@ -2,7 +2,16 @@
 <?php require '../config.php'; ?>
 <?php require $headerStudentFile; ?>
 <?php require '../libs/navStudent.php'; ?>
+<script>
+$.get("http://localhost/pretest/api/examinationList/examination.php", function(data, status){
+            // console.log("Data: " + data + "\nStatus: " + status);
+            d = JSON.parse(data);
+            console.log(JSON.parse(d.data1));
+        });
+</script>
+<div id="div1">
 
+</div>
 <style>
 @media screen and (orientation: portrait) {
   #font1{

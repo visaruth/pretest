@@ -21,7 +21,7 @@
                   <img id="logo"  src="<?php echo $logo;?>">
                   <h2 id="textBandner" style="color:#eb8948; display: inline; ">ANNOP PRETEST</h2>
                   <?php
-                    if($activeURL != $studentURL.'/login.php'){
+                    if($activeURL != $studentURL.'/login.php' && $activeURL != $studentURL.'/register.php'){
                       echo '<button type="button" class="navbar-toggle" style="background: white; padding: 2px 6px 5px 6px; " data-toggle="collapse" data-target="#myNavbar">
                           <span>เมนู</span> <span class="glyphicon glyphicon-menu-down"></span>
                       </button>';
@@ -35,6 +35,12 @@
       <body>
 
 <style>
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 .row {
   margin-left: 0px;
   margin-right: 0px;
