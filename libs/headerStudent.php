@@ -13,6 +13,8 @@
         <link rel="stylesheet" href="<?php echo $assets_folder;?>/sweetalert.css" />
         <script src="<?php echo $assets_folder;?>/bootstrap-datetimepicker.min.js"></script>
         <link rel="stylesheet" href="<?php echo $assets_folder;?>/bootstrap-datetimepicker.min.css" />
+      	<link rel="stylesheet" href="../assets/fonts/specimen_files/specimen_stylesheet.css" type="text/css" charset="utf-8" />
+      	<link rel="stylesheet" href="../assets/fonts/stylesheet.css" type="text/css" charset="utf-8" />
       </head>
 
         <div>
@@ -45,12 +47,16 @@ input::-webkit-inner-spin-button {
   margin-left: 0px;
   margin-right: 0px;
 }
+body{
+  font-family: 'superspace_regularregular';
+}
 @media screen and (orientation: portrait) {
   #textBandner{
     color:#eb8948;
     display: inline;
-    font-size: 22px;
+    font-size: 20px;
   }
+
   #logo{
     width:45px;
     padding: 5px
@@ -63,6 +69,7 @@ input::-webkit-inner-spin-button {
   #textBandner{
     color:#eb8948;
     display: inline;
+    font-size: 40px;
   }
   #logo{
     width:80px;

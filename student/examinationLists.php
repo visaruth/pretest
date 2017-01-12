@@ -5,21 +5,35 @@
 <script>
 $.get("http://localhost/pretest/api/examinationList/examination.php", function(data, status){
             // console.log("Data: " + data + "\nStatus: " + status);
-            d = JSON.parse(data);
-            console.log(JSON.parse(d.data1));
+            var d = JSON.parse(data);
+            console.log(d);
+            var sizeExamination = d.data1['examination'].length;
+            var sizeExaminationAvaliableNow = d.data2['examinationAvaliableNow'].length;
+            var sizeExaminationAvaliableSoon = d.data3['examinationAvaliableSoon'].length;
+            var sizeExaminationUnavaliable = d.data4['examinationUnavaliable'].length;
+            console.log(sizeExamination);
+            console.log(sizeExaminationAvaliableNow);
+            console.log(sizeExaminationAvaliableSoon);
+            console.log(sizeExaminationUnavaliable);
+            document.getElementById('sizeExamination').innerHTML = sizeExamination;
+            document.getElementById('sizeExaminationAvaliableNow').innerHTML = sizeExaminationAvaliableNow;
+            document.getElementById('sizeExaminationAvaliableSoon').innerHTML = sizeExaminationAvaliableSoon;
+            document.getElementById('sizeExaminationUnavaliable').innerHTML = sizeExaminationUnavaliable;
         });
+function all(){
+
+}
+function unregist(){
+
+}
+function registed(){
+
+}
 </script>
 <div id="div1">
 
 </div>
 <style>
-@media screen and (orientation: portrait) {
-  #font1{
-    font-size: 20px;
-  }#font2{
-    font-size: 10px;
-  }
-}
 #bar{
     border-style: solid;
     border-width: 2px;
@@ -29,25 +43,39 @@ $.get("http://localhost/pretest/api/examinationList/examination.php", function(d
     height: 100px;
     /*padding-top: 20px;
     padding-bottom: 20px*/
-  }#font1{
-    color: white;
-  }#font2{
-    color: white;
   }
   #news{
     background-color: white;
 
   }
   @media screen and (orientation: portrait) {
-    #rownews{
+    #rownews, #rownewsx{
       padding-left: 25px;
       padding-right: 25px;
     }
+    #font1{
+      padding-top: 10px;
+      color: white;
+      font-size: 20px;
+    }#font2{
+      padding-top: 10px;
+      color: white;
+      font-size: 10px;
+    }
   }
   @media screen and (orientation: landscape) {
-    #rownews{
+    #rownews, #rownewsx{
       padding-left: 50px;
       padding-right: 50px;
+    }
+    #font1{
+      padding-top: 10px;
+      font-size: 40px;
+      color: white;
+    }#font2{
+      padding-top: 8px;
+      font-size: 30px;
+      color: white;
     }
   }.col-centered{
     float: none;
@@ -65,7 +93,9 @@ $.get("http://localhost/pretest/api/examinationList/examination.php", function(d
         ทั้งหมด
       </h4>
       <h2 id="font1">
-        100
+        <p id="sizeExamination">
+          Loading
+        </p>
       </h2>
     </div>
     <div class="col-xs-2 col-md-2" id="bar">
@@ -73,7 +103,9 @@ $.get("http://localhost/pretest/api/examinationList/examination.php", function(d
         กำลังเปิดรับ
       </h4>
       <h2 id="font1">
-        35
+        <p id="sizeExaminationAvaliableNow">
+          Loading
+        </p>
       </h2>
     </div>
     <div class="col-xs-2 col-md-2" id="bar">
@@ -81,7 +113,9 @@ $.get("http://localhost/pretest/api/examinationList/examination.php", function(d
         รอเปิดรับ
       </h4>
       <h2 id="font1">
-        25
+        <p id="sizeExaminationAvaliableSoon">
+          Loading
+        </p>
       </h2>
     </div>
     <div class="col-xs-2 col-md-2" id="bar">
@@ -89,14 +123,26 @@ $.get("http://localhost/pretest/api/examinationList/examination.php", function(d
         ปิดรับ
       </h4>
       <h2 id="font1">
-        40
+        <p id="sizeExaminationUnavaliable">
+          Loading
+        </p>
       </h2>
     </div>
 </div>
-<div class="col-xs-12" style="height:30px">
-
+<div class="col-xs-12" style="height:30px"></div>
+<div class="row" id="rownewsx">
+  <div class="col-md-2"></div>
+  <div class="col-xs-12 col-md-8 " id="news" style="text-align:center; padding-top:15px; padding-bottom:15px;">
+    <div class="btn-group ">
+    <a href="#" class="btn btn-warning" onclick="all()">ทั้งหมด</a>
+    <a href="#" class="btn btn-warning" onclick="unregist()">ยังไม่ลงทะเบียน</a>
+    <a href="#" class="btn btn-warning" onclick="registed()">ลงทะเบียนแล้ว</a>
+    </div>
+  </div>
 </div>
+<div class="col-xs-12" style="height:10px"></div>
 <div class="row" id="rownews" >
+
   <div class="col-md-2"></div>
   <div class="col-xs-12 col-md-8 " id="news">
     <div class="col-xs-12 col-md-8" >
@@ -117,11 +163,7 @@ $.get("http://localhost/pretest/api/examinationList/examination.php", function(d
         <button type="button" class="btn btn-warning" ><h1>ลงทะเบียน</h1></button>
     </div>
   </div>
-  <div class="col-xs-12" style="height:30px">
-
-  </div>
-  </div>
-  <div class="row" id="rownews" >
+  <div class="col-xs-12" style="height:10px"></div>
     <div class="col-md-2"></div>
     <div class="col-xs-12 col-md-8 " id="news">
     <div class="col-xs-12 col-md-8" >
