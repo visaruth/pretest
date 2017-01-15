@@ -1,33 +1,55 @@
 <?php require '../config.php'; ?>
 <?php $titleName = 'สมัครสมาชิก | Annop Pretest';?>
 <?php require $headerStudentFile; ?>
-
+<style>
+@media screen and (orientation: portrait) {
+	#lastname{
+		margin-top: 10px;
+	}
+}
+</style>
 <div style="background-color:white">
 	<br><br>
 	<div class="container">
     <form class="form-horizontal" action="#" onsubmit="return false;">
             <div class="col-sm-12">
                 <div class="form-group">
-                    <label for="fname" class="col-sm-3 control-label">ชื่อจริง</label>
-                    <div class="col-sm-9">
+                    <label for="fname" class="col-md-4 col-xs-12 control-label">ชื่อจริง-นามสกุล</label>
+                    <div class="col-md-3 col-xs-12">
                         <input type="text" class="form-control normal" id="firstname" name="firstname" placeholder="ชื่อจริง (ภาษาไทย)" required />
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="lname" class="col-sm-3 control-label">นามสกุล</label>
-                    <div class="col-sm-9">
+
+										<div class="col-md-3 col-xs-12">
                         <input type="text" class="form-control normal" id="lastname" placeholder="นามสกุล (ภาษาไทย)" required />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="citizenID" class="col-sm-3 control-label">รหัสประชาชน</label>
-                    <div class="col-sm-9">
+                    <label for="citizenID" class="col-md-4 col-xs-12 control-label">รหัสประชาชน</label>
+                    <div class="col-md-6 col-xs-12">
                         <input type="number" class="form-control" id="citizenID" placeholder="ตัวเลข 13 หลักไม่มีตัวอักษรหรือสัญลักษณ์" required />
                     </div>
                 </div>
+								<div class="form-group">
+                    <label for="username" class="col-md-4 col-xs-12 control-label">Username</label>
+                    <div class="col-md-6 col-xs-12">
+                        <input type="text" class="form-control" id="username" placeholder="ชื่อผู้ใช้งาน" required />
+                    </div>
+                </div>
                 <div class="form-group">
-                    <label for="citizenID" class="col-sm-3 control-label">ปี คศ.-เดือน-วันเกิด</label>
-                    <div class="col-sm-9">
+                    <label for="password" class="col-md-4 col-xs-12 control-label">Password</label>
+                    <div class="col-md-6 col-xs-12">
+                        <input type="password" class="form-control normal" id="password" placeholder="รหัสผ่าน" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword" class="col-md-4 col-xs-12 control-label">Re-Password</label>
+                    <div class="col-md-6 col-xs-12">
+                        <input type="password" class="form-control" id="cpassword" placeholder="ยืนยันรหัสผ่าน" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="citizenID" class="col-md-4 col-xs-12 control-label">ปี คศ.-เดือน-วันเกิด</label>
+                    <div class="col-md-6 col-xs-12">
                         <input type='text' class="form-control normal" id="birthday" required placeholder="yyyy-mm-dd (ปี คศ.-เดือน-วัน เช่น 1995-12-31)"/>
                     </div>
                      <script type="text/javascript">
@@ -46,53 +68,30 @@
                         });
                     </script>
                 </div>
-                <div class="form-group">
-                    <label for="school" class="col-sm-3 control-label">โรงเรียน</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control normal" id="schoolName" placeholder="ชื่อโรงเรียน (ภาษาไทย)" required />
-                    </div>
-                </div>
                  <div class="form-group">
-                    <label for="phoneNo" class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
-                    <div class="col-sm-9">
-                        <input type="number" class="form-control normal" id="phoneNo" placeholder="(ตัวเลขเท่านั้น)" required />
+                    <label for="phoneNo" class="col-md-4 col-xs-12 control-label">เบอร์โทรศัพท์</label>
+                    <div class="col-md-6 col-xs-12">
+                        <input type="number" class="form-control normal" id="phoneNo" placeholder="หมายเลขโทรศัพท์ (ตัวเลขเท่านั้น)" required />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">E-MAIL</label>
-                    <div class="col-sm-9">
-                        <input type="email" class="form-control normal" id="email" required />
+                    <label for="email" class="col-md-4 col-xs-12 control-label">E-MAIL</label>
+                    <div class="col-md-6 col-xs-12">
+                        <input type="email" class="form-control normal" placeholder="อีเมล" id="email" required />
                     </div>
                 </div>
-                <hr />
-                <div class="form-group">
-                    <label for="username" class="col-sm-3 control-label">Username</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" id="username"  required />
+								<div class="form-group">
+                    <label for="school" class="col-md-4 col-xs-12 control-label">โรงเรียน</label>
+                    <div class="col-md-6 col-xs-12">
+                        <input type="text" class="form-control normal" id="schoolName" placeholder="ชื่อโรงเรียนที่กำลังศึกษา (ภาษาไทย)" required />
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                        <input type="password" class="form-control normal" id="password" required />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="cpassword" class="col-sm-3 control-label">Confirm Password</label>
-                    <div class="col-sm-9">
-                        <input type="password" class="form-control" id="cpassword" required />
-                    </div>
-                </div>
-
-                <hr />
-								<div class="col-xs-6 col-md-6">
-									<button type="button" class="btn btn-danger" style="width:100%" onclick="cancel()">ยกเลิก</button>
+								<div class="col-xs-6 col-md-6" style="text-align:right;">
+									<button type="button" class="btn btn-danger" onclick="cancel()">ยกเลิก</button>
 								</div>
-								<div class="col-xs-6 col-md-6">
-									<button type="button" class="btn btn-warning" style="width:100%" id="send" onclick="submitReg()">สมัครสมาชิก</button>
+								<div class="col-xs-6 col-md-6" style="text-align:left;">
+									<button type="button" class="btn btn-warning" onclick="submitReg()">สมัครสมาชิก</button>
 								</div>
-
-                <br><br>
             </div>
         </form>
 	</div>

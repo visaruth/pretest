@@ -19,7 +19,7 @@
 
         <div>
           <div class="row text-center" style="background:#ffe4a1; ">
-              <div class="col-xs-12 col-lg-12">
+              <div class="col-xs-12 col-lg-12" id="band">
                   <img id="logo"  src="<?php echo $logo;?>">
                   <h2 id="textBandner" style="color:#eb8948; display: inline; ">ANNOP PRETEST</h2>
                   <?php
@@ -49,14 +49,19 @@ input::-webkit-inner-spin-button {
 }
 body{
   font-family: 'superspace_regularregular';
+	line-height: 120%;
 }
 @media screen and (orientation: portrait) {
   #textBandner{
     color:#eb8948;
     display: inline;
     font-size: 20px;
+    position: relative;
+    bottom: 10px;
   }
-
+  #band{
+    text-align: left;
+  }
   #logo{
     width:45px;
     padding: 5px
@@ -70,6 +75,8 @@ body{
     color:#eb8948;
     display: inline;
     font-size: 40px;
+    position: relative;
+    bottom: 20px;
   }
   #logo{
     width:80px;

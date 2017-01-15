@@ -18,7 +18,7 @@
 			border-radius: 0px;
 		}
 
-		.btn:hover {
+		#btn:hover {
 			box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 		}
 #forget {
@@ -102,25 +102,29 @@ if(!empty($_POST))
 	<div class="container" style="">
 		<form class="form-horizontal" role="form" href="login" method="post" autocomplete="off">
             <center>
-                <div class="form-group">
-                    <label  class="col-sm-4 control-label">รหัสประจำตัวประชาชน</label>
-                    <div class="col-sm-5">
+                <div class="row form-group">
+                    <label  class="col-md-4 control-label">รหัสประจำตัวประชาชน</label>
+                    <div class="col-md-5">
                         <input type="text" maxlength="13" class="form-control normal" id="citizenID" name="citizenID" required />
                     </div>
-					<div class="col-sm-3"></div>
                 </div>
-
-
-                <div class="form-group">
-                    <label  class="col-sm-4 control-label">รหัสผ่าน</label>
-                    <div class="col-sm-5">
-                        <input type="password" class="form-control normal" id="password" name="password" required />
+                <div class="row form-group ">
+                    <label  class="col-md-4 control-label">รหัสผ่าน</label>
+                    <div class="col-md-5">
+                      <div class="input-group">
+                          <input type="password" class="form-control normal" id="password" name="password" required />
+                          <div class="input-group-btn">
+                            <button class="btn" type="button" onclick="changeEye()" style="border-radius: 0px;">
+                              <i id="iconEye"  class="glyphicon glyphicon-eye-open" style="padding-top:1px;"></i>
+                            </button>
+                          </div>
+                      </div>
                     </div>
                 </div>
 				<div class="form-group">
 				<div class="col-sm-3"></div><div class="col-sm-6" style="text-align: right;"><a id="forget" href = "#" onclick="forgetpass();">ลืมรหัสผ่าน</a> | <a href = "register.php" id="reg" >สมัครสมาชิก</a></div>
 				</div>
-                <button id="loginbtn" type="summit" style=" background-color: #fc4343; color:white; border-radius:0px;" class="btn" > ลงชื่อเข้าใช้ </button><br><br>
+                <button id="btn" type="summit" style=" background-color: #fc4343; color:white; border-radius:0px;" class="btn" > ลงชื่อเข้าใช้ </button><br><br>
 				<!--button type="button" style=" background-color: #28449b; color:white;" class="btn"> เข้าสู่ระบบด้วย Facebook </button--><br><br>
             </center>
         </form>
@@ -130,6 +134,17 @@ if(!empty($_POST))
 
 </div>
 <script>
+  function changeEye(){
+    if(document.getElementById("password").type == "password"){
+      document.getElementById("password").type = "text";
+      document.getElementById("iconEye").setAttribute("class", "glyphicon glyphicon-eye-close");
+      document.getElementById("password").focus();
+    }else{
+      document.getElementById("password").type = "password";
+      document.getElementById("iconEye").setAttribute("class", "glyphicon glyphicon-eye-open");
+      document.getElementById("password").focus();
+    }
+  }
   function forgetpass(){
     swal({
       title: "ขออภัย",
